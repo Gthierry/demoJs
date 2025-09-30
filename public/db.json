@@ -1,0 +1,44 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "email": "admin",
+            "password": "admin",
+            "role": "admin"
+        }
+    ],
+    "foods": [
+        {
+            "id": 1,
+            "name": "Pizza",
+            "calories": 300,
+            "lipids": 10,
+            "carbohydrates": 40,
+            "proteins": 20,
+            "recipes": [
+                {
+                    "id": 1,
+                    "name": "Pizza Margherita",
+                    "description": "Classic pizza with tomato sauce, mozzarella cheese, and fresh basil.",
+                    "ingredients": [
+                        "Pizza dough",
+                        "Tomato sauce",
+                        "Mozzarella cheese",
+                        "Fresh basil leaves",
+                        "Olive oil",
+                        "Salt"
+                    ],
+                    "steps": [
+                        "Preheat the oven to 475°F (245°C).",
+                        "Roll out the pizza dough on a floured surface to your desired thickness.",
+                        "Spread a thin layer of tomato sauce over the dough.",
+                        "Add slices of mozzarella cheese evenly over the sauce.",
+                        "Bake in the preheated oven for 10-15 minutes, or until the crust is golden and the cheese is bubbly.",
+                        "Remove from the oven and top with fresh basil leaves.",
+                        "Drizzle with olive oil and sprinkle with a pinch of salt before serving."
+                    ]
+                }
+            ]
+        }
+    ]
+}
