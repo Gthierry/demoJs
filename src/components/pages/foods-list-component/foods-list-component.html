@@ -1,0 +1,14 @@
+<p>foods-list-component works!</p>
+<div class="p-3 ">
+    <h1 class="bg- text-center text-black-50 bg-secondary bg-gradient  ">Food List</h1>
+</div>
+<div class=" w-75 m-auto">
+    <ul class="list-unstyled text-center">
+        @for(food of foodList; track food.title) {
+        <li class="card w-75 m-auto p-5 mt-3 ">
+            <p>{{food.title}}: {{food.type}}</p>
+            <p>{{food.description}}</p>
+        </li>
+        }
+    </ul>
+</div>

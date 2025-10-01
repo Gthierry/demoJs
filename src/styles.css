@@ -1,1 +1,4 @@
+@import "bootstrap/dist/css/bootstrap.min.css";
+/* si tu veux aussi les icônes */
+@import "bootstrap-icons/font/bootstrap-icons.css";
 /* You can add global styles to this file, and also import other style files */
