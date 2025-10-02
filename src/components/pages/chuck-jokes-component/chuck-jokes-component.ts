@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { ChuckJokeModel } from '../../../core/models/chuck-joke-model';
 import { Subscription, Observable } from 'rxjs';
 import { ChuckJokeService } from '../../../core/services/chuck-joke-service/chuck-joke-service';
-import { AsyncPipe, JsonPipe } from '@angular/common';
+import { JsonPipe } from '@angular/common';
 
 
 @Component({
   selector: 'app-chuck-jokes-component',
-  imports: [AsyncPipe, JsonPipe
+  imports: [
+    JsonPipe
 
   ],
   templateUrl: './chuck-jokes-component.html',
