@@ -3,6 +3,7 @@ import { Food } from '../../../core/models/food.model';
 import { FoodService } from '../../../core/services/food-services/food-service';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -31,7 +32,11 @@ export class FoodsListComponent {
     //appel du service pour recuperer la liste des aliments
     this.myService.getFood().subscribe({
       next: (response: Food[]) => {
-        this.foodList = response;
+        // Ajouter des IDs si ils n'existent pas
+        this.foodList = response.map((food, index) => ({
+          ...food,
+          id: food.id || index + 1
+        }));
         this.foodCount = this.foodList.length;
       },
       error: (error: any) => {
@@ -41,8 +46,8 @@ export class FoodsListComponent {
 
   }
 
-  onClick(params: string) {
-    this.router.navigate(['/food-detail', params.toString]);
+  onClick(params: number) {
+    this.router.navigate(['/food-detail', params.toString()]);
   }
 
 
