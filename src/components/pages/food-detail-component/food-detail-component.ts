@@ -1,8 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Food } from '../../../core/models/food.model';
-import { HttpParams } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FoodService } from '../../../core/services/food-services/food-service';
 import { AddFood } from '../../../core/models/addFood.model';
 
@@ -13,11 +11,12 @@ import { AddFood } from '../../../core/models/addFood.model';
   styleUrl: './food-detail-component.css',
 })
 export class FoodDetailComponent {
-  private activatedRoute = inject(ActivatedRoute);
   id: number = -1;
-
-  private foodService = inject(FoodService);
   food: Food | undefined;
+
+  private activatedRoute = inject(ActivatedRoute);
+  private route = inject(Router);
+  private foodService = inject(FoodService);
 
   constructor() {
     this.id = +this.activatedRoute.snapshot.params['id'];
@@ -27,9 +26,38 @@ export class FoodDetailComponent {
 
   getFoodDetails() {
     this.foodService.getFoodDetails(this.id).subscribe({
-      next: (response) => {
+      next: (response: Food) => {
         this.food = response;
       },
     });
+  }
+
+  updatedFood: AddFood = {
+    title: 'Updated Angular Post',
+    type: 'my ho my',
+    description: 'you hou hou',
+    filename: 'zefzfze',
+    height: 5,
+    width: 5,
+    price: 5,
+  };
+
+  updateFood() {
+    if (this.food) {
+      this.food.title = this.updatedFood.title;
+      this.food.type = this.updatedFood.type;
+      this.food.description = this.updatedFood.description;
+      this.food.filename = this.updatedFood.filename;
+      this.food.height = this.updatedFood.height;
+      this.food.width = this.updatedFood.width;
+      this.food.price = this.updatedFood.price;
+
+      this.foodService.updateFood(this.food).subscribe({
+        next: (response) => {
+          console.log('details ' + response);
+          //this.route.navigate(['foods-list']);
+        },
+      });
+    }
   }
 }

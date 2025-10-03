@@ -23,4 +23,10 @@ export class FoodService {
   getFoodDetails(foodId: number): Observable<Food> {
     return this.httpClient.get<Food>(this.API_URL + foodId);
   }
+
+  updateFood(food: Food) {
+    console.log('mon service:' + food.title);
+
+    return this.httpClient.put<Food>(this.API_URL + food.id, food);
+  }
 }
