@@ -32,11 +32,7 @@ export class FoodsListComponent {
     //appel du service pour recuperer la liste des aliments
     this.myService.getFood().subscribe({
       next: (response: Food[]) => {
-        // Ajouter des IDs si ils n'existent pas
-        this.foodList = response.map((food, index) => ({
-          ...food,
-          id: food.id || index + 1
-        }));
+        this.foodList = response;
         this.foodCount = this.foodList.length;
       },
       error: (error: any) => {
@@ -46,8 +42,8 @@ export class FoodsListComponent {
 
   }
 
-  onClick(params: number) {
-    this.router.navigate(['/food-detail', params.toString()]);
+  onClick(params: string) {
+    this.router.navigate(['/food-detail', params]);
   }
 
 

@@ -1,28 +1,46 @@
-<div class="card">
-    <form class="form-group w-50 m-auto justify-content-evenly">
-        <h2>Ajout de d'aliment</h2>
-        <label>Nom:</label>
-        <input class="form-control w-50 m-auto" type="text" required>
-        <br><br>
-        <label>Type:</label>
-        <input type="text" required>
-        <br><br>
-        <label>Description:</label>
-        <input type="text" required>
+<div class="container py-5">
+    <h2 class="text-center mb-4">Ajout de d'aliment</h2>
+    <form class="mx-auto">
+        <div class="mb-3">
 
-        <br><br>
-        <label>filename:</label>
-        <input type="text" required>
-        <br>
-        <label>height</label>
-        <input type="number" required>
-        <br><br>
-        <label>width</label>
-        <input type="number" required>
-        <br><br>
-        <label>price</label>
-        <input type="number" required>
-        <br><br>
-        <button type="submit">Add Food</button>
+            <label class="form-label">Nom:</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="text" required>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">Type:</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="text" required>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">Description:</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="text" required>
+        </div>
+
+        <div class="mb-3">
+
+            <label class="form-label">filename:</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="text" required>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">height</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="number" required>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">width</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="number" required>
+        </div>
+        <div class="mb-3">
+
+            <label class="form-label">price</label>
+            <input class="form-control" style="border: 2px solid #ddd; border-radius: 5px;" type="number" required>
+        </div>
+        <div>
+
+            <button type="submit">Add Food</button>
+        </div>
     </form>
+    <button (click)="addFood()">add </button>
 </div>
